@@ -195,7 +195,7 @@ export default class Map {
           `<dd>
             <a href="#${bus.routeId}_${bus.routeName}">
               <strong>${bus.routeName}</strong> <span>${bus.regionName}</span>
-              <span class="type ${getBuesType(bus.routeTypeName)}>${
+              <span class="type ${getBuesType(bus.routeTypeName)}"">${
             bus.routeTypeName
           }</span>
             </a>
@@ -203,7 +203,7 @@ export default class Map {
       )
       .join('');
 
-    return `<dl class="bus-routes>
+    return `<dl class="bus-routes">
       <dt><strong>${name}</strong></dt>${list}
     </dl>`;
   }
