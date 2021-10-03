@@ -1,3 +1,5 @@
+import { handleAjax } from './common.js';
+
 const { fromEvent, of, from, combineLatest } = rxjs;
 const { scan, map, pluck, switchMap, tap, mergeMap } = rxjs.operators;
 const { ajax } = rxjs.ajax;
@@ -128,7 +130,7 @@ export default class Map {
       switchMap((coord) =>
         ajax.getJSON(`/station/around/${coord.longitude}/${coord.latitude}`)
       ),
-      pluck('busStationAroundList')
+      handleAjax('busStationAroundList')
     );
   }
 
